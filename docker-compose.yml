@@ -1,0 +1,21 @@
+version: '2'
+services:
+    survey-service:
+      container_name: ms-accountservice
+      build:
+        context: .
+      image: slotero/survey:dev
+      environment: 
+        spring.datasource.url: jdbc:h2:mem:mydb
+        spring.datasource.username: sa
+        spring.datasource.password: 123456
+        spring.datasource.driverClassName: org.h2.Driver        
+      expose:
+        - 8080
+      ports:
+        - 8080:8080
+      networks:
+        - restaurant_network
+networks:
+    restaurant_network:
+      driver: bridge

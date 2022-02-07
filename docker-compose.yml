@@ -1,7 +1,7 @@
 version: '2'
 services:
     survey-service:
-      container_name: ms-accountservice
+      container_name: ms-survey-service
       build:
         context: .
       image: slotero/survey:dev
